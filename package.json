@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/walebant/company-verify#readme",
   "dependencies": {
-    "express": "^4.18.2",
     "jsdom": "^23.0.1"
   },
   "devDependencies": {
