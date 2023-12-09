@@ -1,4 +1,4 @@
 import searchCompany from './src/controllers/searchCompany.js';
-// import tinInfo from './src/controllers/tinInfo.js';
+import firs_search from './src/controllers/firs_search.js';
 
-export { searchCompany };
+export { searchCompany, firs_search };
