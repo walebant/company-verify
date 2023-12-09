@@ -1,13 +1,10 @@
 import jsdom from 'jsdom';
 const { JSDOM } = jsdom;
 
-export default async function (req, res) {
+export default async function ({ criteria, query }) {
+  // criteria = RC or TIN
+  // query = 3067627
   const url = 'https://apps.firs.gov.ng/tinverification/';
-
-  const criteria = {
-    TIN: 'TIN',
-    RC: 'RC',
-  };
 
   const body = new FormData();
   body.set(
@@ -19,8 +16,8 @@ export default async function (req, res) {
     '__EVENTVALIDATION',
     '0ziF49K8xm141M+RRTy+tlkPzxOz2PyyPPf7mP0gPPqE/w5pU6FzD/q3zt+Nwqff+ry/eyUSIvNO1EdH6m71lU56GodocO387XLNLxvAJ1RhLhOJmWycuORcmMmsU9+Ju+w9ahqPri1H84yhEqVifRGtc9/pS5CwTHlEywIzI6xueTTxGt4wTKzWjYERGTXkdZdzp6VeZ3MVO6ofEdPVfD3O9IATC/LfPHF4Ml6P+HM='
   );
-  body.set('DropDownList1', 'RC');
-  body.set('TextBox1', '3067627');
+  body.set('DropDownList1', criteria);
+  body.set('TextBox1', query);
   body.set('Button1', 'Search');
 
   const fetchResponse = await fetch(url, {
@@ -41,5 +38,5 @@ export default async function (req, res) {
 
   const data = { name, tin, rc, jtbTIN, taxOffice, phone, email };
 
-  return res.send(data);
+  return data;
 }
