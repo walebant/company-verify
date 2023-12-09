@@ -1,4 +1,4 @@
-import searchCompany from './src/controllers/searchCompany.js';
+import cac_search from './src/controllers/cac_search.js';
 import firs_search from './src/controllers/firs_search.js';
 
-export { searchCompany, firs_search };
+export { cac_search, firs_search };
