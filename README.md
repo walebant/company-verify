@@ -1,6 +1,6 @@
 # company-verify
 
-Company verify is a Nodejs package that enables developers search and verify if a company is registered in Nigeria under the [Corporate Affairs Commission](https://www.cac.gov.ng) and also retrieve their taxpayer details from [Federal Inland Revenue Service](https://www.firs.gov.ng/)
+> Company VERIFY is a Nodejs package that enables developers search and verify if a company is registered in Nigeria under the [Corporate Affairs Commission](https://www.cac.gov.ng) and also retrieve their taxpayer details from [Federal Inland Revenue Service](https://www.firs.gov.ng/)
 
 <!-- [START usecases] -->
 
@@ -62,17 +62,17 @@ async  function  getData()  {
 //RESPONSES
 //Success
 {
-	"success": true,
-	"message": "",
-	data: {
-		"name": String,
-		"tin": String,
-		"rc": String,
-		"jtbTIN": String,
-		"taxOffice": String,
-		"phone": String,
-		"email": String
-	}
+    "success": true,
+    "message": "",
+    data: {
+	"name": String,
+	"tin": String,
+	"rc": String,
+	"jtbTIN": String,
+	"taxOffice": String,
+	"phone": String,
+	"email": String
+    }
 }
 
 //Not Found
@@ -96,35 +96,35 @@ async  function  getData()  {
 //RESPONSES
 //Success
 {
-	"status": "OK",
-	"success": Boolean,
-	"errorCode": Number,
-	"data": [
-		{
-			"active": Boolean,
-			"email": String | null,
-			"natureOfBusinessName": String,
-			"id": Number,
-			"approvedName": String,
-			"rcNumber": String,
-			"city": String,
-			"lga": String | null,
-			"classification": String,
-			"registrationApproved": boolean,
-			"branchAddress": String,
-			"registrationDate": Date,
-			"classificationId": Number,
-			"headOfficeAddress": String | null,
-			"businessCommencementDate": String | null,
-			"objectives": String,
-			"delistingStatus": String | null,
-			"companyTypeName": String,
-			"searchScore": Float,
-			"address": String",
-			"state": String
-		},
-	],
-	"message": "See Data Object for Details",
-	"timestamp": Date
+    "status": "OK",
+    "success": Boolean,
+    "errorCode": Number,
+    "data": [
+      {
+	"active": Boolean,
+	"email": String | null,
+	"natureOfBusinessName": String,
+	"id": Number,
+	"approvedName": String,
+	"rcNumber": String,
+	"city": String,
+	"lga": String | null,
+	"classification": String,
+	"registrationApproved": boolean,
+	"branchAddress": String,
+	"registrationDate": Date,
+	"classificationId": Number,
+	"headOfficeAddress": String | null,
+	"businessCommencementDate": String | null,
+	"objectives": String,
+	"delistingStatus": String | null,
+	"companyTypeName": String,
+	"searchScore": Float,
+	"address": String",
+	"state": String
+      },
+    ],
+    "message": "See Data Object for Details",
+    "timestamp": Date
 }
 ```
