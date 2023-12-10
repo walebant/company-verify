@@ -21,7 +21,7 @@ export default async function ({ criteria, query }) {
   body.set('Button1', 'Search');
 
   if (criteria !== 'RC' || criteria !== 'TIN') {
-    return { status: 'error', message: `Criteria can either be "TIN" or "RC"` };
+    return { success: false, message: `Criteria can either be "TIN" or "RC"` };
   }
 
   const fetchResponse = await fetch(url, {
@@ -34,7 +34,7 @@ export default async function ({ criteria, query }) {
 
   // handle error
   if (doc.querySelector('span[id=Alert1]')) {
-    return { status: 'success', message: 'Not found' };
+    return { success: true, message: 'Not found' };
   } else {
     const name = doc.querySelector('input[name=txtName]').value;
     const tin = doc.querySelector('input[name=txtTIN]').value;
@@ -45,7 +45,8 @@ export default async function ({ criteria, query }) {
     const email = doc.querySelector('input[name=txtEmail]').value;
 
     const response = {
-      status: 'success',
+      success: true,
+      message: '',
       data: { name, tin, rc, jtbTIN, taxOffice, phone, email },
     };
     return response;
