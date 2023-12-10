@@ -20,23 +20,31 @@ export default async function ({ criteria, query }) {
   body.set('TextBox1', query);
   body.set('Button1', 'Search');
 
+  if (criteria !== 'RC' || criteria !== 'TIN') {
+    return { error: 'Criteria can either be TIN or RC' };
+  }
+
   const fetchResponse = await fetch(url, {
     method: 'POST',
     body,
   });
   const raw = await fetchResponse.text();
   const dom = new JSDOM(raw);
-
   const doc = dom.window.document;
-  const name = doc.querySelector('input[name=txtName]').value;
-  const tin = doc.querySelector('input[name=txtTIN]').value;
-  const rc = doc.querySelector('input[name=txtRC]').value;
-  const jtbTIN = doc.querySelector('input[name=txtJTB]').value;
-  const taxOffice = doc.querySelector('input[name=txtTaxOffice]').value;
-  const phone = doc.querySelector('input[name=txtPhone]').value;
-  const email = doc.querySelector('input[name=txtEmail]').value;
 
-  const data = { name, tin, rc, jtbTIN, taxOffice, phone, email };
+  // handle error
+  if (doc.querySelector('span[id=Alert1]')) {
+    return { error: 'Not found' };
+  } else {
+    const name = doc.querySelector('input[name=txtName]').value;
+    const tin = doc.querySelector('input[name=txtTIN]').value;
+    const rc = doc.querySelector('input[name=txtRC]').value;
+    const jtbTIN = doc.querySelector('input[name=txtJTB]').value;
+    const taxOffice = doc.querySelector('input[name=txtTaxOffice]').value;
+    const phone = doc.querySelector('input[name=txtPhone]').value;
+    const email = doc.querySelector('input[name=txtEmail]').value;
 
-  return data;
+    const data = { name, tin, rc, jtbTIN, taxOffice, phone, email };
+    return data;
+  }
 }
