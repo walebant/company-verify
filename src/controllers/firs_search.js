@@ -21,7 +21,10 @@ export default async function ({ criteria, query }) {
   body.set('Button1', 'Search');
 
   if (criteria !== 'RC' || criteria !== 'TIN') {
-    return { success: false, message: `Criteria can either be "TIN" or "RC"` };
+    return {
+      success: false,
+      message: `Invalid Criteria. Can either be "TIN" or "RC"`,
+    };
   }
 
   const fetchResponse = await fetch(url, {
