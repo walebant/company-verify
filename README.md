@@ -65,13 +65,13 @@ async  function  getData()  {
 	"success": true,
 	"message": "",
 	data: {
-		"name": string,
-		"tin": string,
-		"rc": string,
-		"jtbTIN": string,
-		"taxOffice": string,
-		"phone": string,
-		"email": string
+		"name": String,
+		"tin": String,
+		"rc": String,
+		"jtbTIN": String,
+		"taxOffice": String,
+		"phone": String,
+		"email": String
 	}
 }
 
@@ -97,31 +97,31 @@ async  function  getData()  {
 //Success
 {
 	"status": "OK",
-	"success": boolean,
+	"success": Boolean,
 	"errorCode": Number,
 	"data": [
 		{
-			"active": boolean,
-			"email": string | null,
-			"natureOfBusinessName": string,
+			"active": Boolean,
+			"email": String | null,
+			"natureOfBusinessName": String,
 			"id": Number,
-			"approvedName": string,
-			"rcNumber": string,
-			"city": string,
-			"lga": string | null,
-			"classification": string,
+			"approvedName": String,
+			"rcNumber": String,
+			"city": String,
+			"lga": String | null,
+			"classification": String,
 			"registrationApproved": boolean,
-			"branchAddress": string,
+			"branchAddress": String,
 			"registrationDate": Date,
 			"classificationId": Number,
-			"headOfficeAddress": string | null,
-			"businessCommencementDate": string | null,
-			"objectives": string,
-			"delistingStatus": string | null,
-			"companyTypeName": string,
-			"searchScore": float,
-			"address": string",
-			"state": string
+			"headOfficeAddress": String | null,
+			"businessCommencementDate": String | null,
+			"objectives": String,
+			"delistingStatus": String | null,
+			"companyTypeName": String,
+			"searchScore": Float,
+			"address": String",
+			"state": String
 		},
 	],
 	"message": "See Data Object for Details",
