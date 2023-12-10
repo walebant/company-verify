@@ -1,6 +1,6 @@
 {
   "name": "company-verify",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Verify companies in Nigeria through Corporate Affairs Commission and Federal Inland Revenue Service",
   "main": "index.js",
   "type": "module",
